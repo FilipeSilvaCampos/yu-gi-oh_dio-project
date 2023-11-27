@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Yu Gi Oh Jokenpo</title>
+    <meta http-equiv="content-type" content="text/html;" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/styles/reset.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+
+    <!-- Framework -->
+    <link rel="stylesheet" href="./src/styles/buttons.css" />
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" media="image/x-icon" />
+
+</head>
+
+<body>
+    <audio id="bgm" loop>
+        <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3" />
+    </audio>
+
+    <div class="bg-video">
+        <video autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="container">
+        <button id="audioButton" class="rpgui-button" onclick="playBgm()">
+            music
+        </button>
+        <div class="container-left framed-golden-2">
+            <div class="score-box frame">
+                <span id="score-points">Win: 0 | Loose: 0</span>
+            </div>
+            <div class="menu-avatar">
+                <img id="card-image" />
+            </div>
+            <div class="card-details frame">
+                <p id="card-name">a</p>
+                <p id="card-type">a</p>
+            </div>
+        </div>
+
+        <div class="container-right">
+            <div class="card-box_container">
+                <div class="card-box framed" id="computer-cards"></div>
+
+                <div class="card-versus__container">
+                    <div class="versus-top">
+                        <div class="card-infield">
+                            <img id="player-field-card" height="180" width="125" />
+                        </div>
+
+                        <img height="100" src="./src/assets/icons/millenium2.png" />
+
+                        <div class="card-infield">
+                            <img id="computer-field-card" height="180" width="125" />
+                        </div>
+                    </div>
+
+                    <div class="versus-botton">
+                        <button id="next-duel" class="rpgui-button" onclick="resetDuel()">
+                            GANHOU
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="card-box framed" id="player-cards"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
